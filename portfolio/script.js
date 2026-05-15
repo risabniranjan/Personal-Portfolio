@@ -112,3 +112,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => activeObserver.observe(s));
 });
+
+// ========== CONTACT FORM SUBMIT ==========
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+    const body = encodeURIComponent(`${message}`);
+
+    window.location.href = `mailto:risabniranjan@gmail.com?subject=${subject}&body=${body}`;
+  });
+}

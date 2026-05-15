@@ -1328,7 +1328,20 @@ a.project-link-card:hover .project-link-hint {
 @media(max-width:1024px) {
   .nav {
     grid-template-columns: 1fr auto;
-    padding: 14px 24px
+    padding: 14px 24px;
+    z-index: 2100
+  }
+
+  .nav-left {
+    position: relative;
+    z-index: 2101
+  }
+
+  .nav-right {
+    position: relative;
+    z-index: 2101;
+    display: flex;
+    align-items: center
   }
 
   .nav-links {
@@ -1338,12 +1351,14 @@ a.project-link-card:hover .project-link-hint {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 10, 10, 0.97);
+    background: #000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 32px;
-    z-index: 998
+    z-index: 2000
   }
 
   .nav-links.open {
@@ -1360,7 +1375,7 @@ a.project-link-card:hover .project-link-hint {
 
   .hamburger {
     display: flex;
-    z-index: 999
+    z-index: 2101
   }
 
   .hamburger.active span:nth-child(1) {
@@ -1471,6 +1486,7 @@ a.project-link-card:hover .project-link-hint {
   .certs-grid {
     grid-template-columns: repeat(2, 1fr)
   }
+
   .community-grid {
     grid-template-columns: 1fr
   }
